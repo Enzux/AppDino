@@ -53,12 +53,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0")
     implementation("com.google.firebase:firebase-analytics:21.0.0")
-    // ML Kit barcode scanning
-    implementation("com.google.mlkit:barcode-scanning:17.0.0")
-    // CameraX
-    implementation("androidx.camera:camera-camera2:1.1.0")
-    implementation("androidx.camera:camera-lifecycle:1.1.0")
-    implementation("androidx.camera:camera-view:1.1.0")
-    // Lifecycle for CameraX
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.0")
+    implementation ("com.google.zxing:core:3.4.1")
+    implementation ("com.journeyapps:zxing-android-embedded:4.2.0")
 }
