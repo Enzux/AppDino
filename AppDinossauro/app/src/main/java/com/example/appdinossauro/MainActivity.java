@@ -100,12 +100,10 @@ public class MainActivity extends AppCompatActivity {
                                 barcodeText.removeCallbacks(null);
                                 barcodeData = barcodes.valueAt(0).email.address;
                                 barcodeText.setText(barcodeData);
-                                toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
                                 intentToBrowser(barcodeData);
                             } else {
                                 barcodeData = barcodes.valueAt(0).displayValue;
                                 barcodeText.setText(barcodeData);
-                                toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
                                 intentToBrowser(barcodeData);
                             }
                         }
@@ -119,6 +117,10 @@ public class MainActivity extends AppCompatActivity {
     private void intentToBrowser(String url) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(browserIntent);
+    }
+
+    public void go_dino(View view){
+        setContentView(R.layout.dinolayout);
     }
 
 }
