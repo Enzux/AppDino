@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Three.js in Android</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <!-- Inclua o Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Verifique se o arquivo está sendo carregado
+        let loadedModel;
+            const glftLoader = new GLTFLoader();
+            glftLoader.load('models/cube.gltf', (gltfScene) => {
+            loadedModel = gltfScene;
+            // console.log(loadedModel);
+
+            gltfScene.scene.rotation.y = Math.PI / 8;
+            gltfScene.scene.position.y = 3;
+            gltfScene.scene.scale.set(10, 10, 10);
+            test.scene.add(gltfScene.scene);
+        });
+
+        camera.position.z = 5;
+
+        function animate(model) {
+            requestAnimationFrame(() => animate(model));
+            model.rotation.x += 0.01;
+            model.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+    </script>
+</body>
+</html>
