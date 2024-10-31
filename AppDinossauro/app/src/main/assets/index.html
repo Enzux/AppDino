@@ -2,45 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Three.js in Android</title>
+    <title>Three.js Model Viewer</title>
     <style>
         body { margin: 0; overflow: hidden; }
         canvas { display: block; }
     </style>
 </head>
 <body>
-    <!-- Inclua o Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <script>
+    <!-- Inclua Three.js e o OBJLoader usando URLs de CDNs compatíveis com navegadores -->
+    <script type="module">
+        import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
+        import { OBJLoader } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/loaders/OBJLoader.js';
+
+        // Configuração básica da cena
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        // Verifique se o arquivo está sendo carregado
-        let loadedModel;
-            const glftLoader = new GLTFLoader();
-            glftLoader.load('models/cube.gltf', (gltfScene) => {
-            loadedModel = gltfScene;
-            // console.log(loadedModel);
+        // Carregar o modelo OBJ
+        const objLoader = new OBJLoader();
+        objLoader.load(
+            '/models/cube.obj',  // Substitua pelo caminho correto do seu arquivo OBJ
+            (object) => {
+                scene.add(object);
+                camera.position.z = 5;  // Posiciona a câmera para visualizar o objeto
+                animate();
+            },
+            undefined,
+            (error) => {
+                console.error('Erro ao carregar o modelo OBJ:', error);
+            }
+        );
 
-            gltfScene.scene.rotation.y = Math.PI / 8;
-            gltfScene.scene.position.y = 3;
-            gltfScene.scene.scale.set(10, 10, 10);
-            test.scene.add(gltfScene.scene);
-        });
-
-        camera.position.z = 5;
-
-        function animate(model) {
-            requestAnimationFrame(() => animate(model));
-            model.rotation.x += 0.01;
-            model.rotation.y += 0.01;
+        // Função de animação
+        function animate() {
+            requestAnimationFrame(animate);
             renderer.render(scene, camera);
         }
 
+        // Ajustar renderização ao redimensionamento
         window.addEventListener('resize', () => {
             renderer.setSize(window.innerWidth, window.innerHeight);
             camera.aspect = window.innerWidth / window.innerHeight;
