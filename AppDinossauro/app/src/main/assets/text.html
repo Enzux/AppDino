@@ -2,18 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Three.js Model Viewer</title>
+    <title>Three.js in Android</title>
     <style>
         body { margin: 0; overflow: hidden; }
         canvas { display: block; }
     </style>
 </head>
 <body>
-    <!-- Inclua Three.js e o OBJLoader usando URLs de CDNs compatíveis com navegadores -->
-    <script type="module">
-        import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
-        import { OBJLoader } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/loaders/OBJLoader.js';
-
+    <!-- Inclua o Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
         // Configuração básica da cena
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -21,26 +19,22 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        // Carregar o modelo OBJ
-        const objLoader = new OBJLoader();
-        objLoader.load(
-            '/models/cube.obj',  // Substitua pelo caminho correto do seu arquivo OBJ
-            (object) => {
-                scene.add(object);
-                camera.position.z = 5;  // Posiciona a câmera para visualizar o objeto
-                animate();
-            },
-            undefined,
-            (error) => {
-                console.error('Erro ao carregar o modelo OBJ:', error);
-            }
-        );
+        // Criar um cubo para renderizar
+        const geometry = new THREE.BoxGeometry();
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+        camera.position.z = 5;
 
         // Função de animação
         function animate() {
             requestAnimationFrame(animate);
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
             renderer.render(scene, camera);
         }
+        animate();
 
         // Ajustar renderização ao redimensionamento
         window.addEventListener('resize', () => {

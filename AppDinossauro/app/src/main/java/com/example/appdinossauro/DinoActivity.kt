@@ -8,22 +8,23 @@ import androidx.appcompat.app.AppCompatActivity
 
 class DinoActivity : AppCompatActivity() {
 
-    private lateinit var webView: WebView
+    private lateinit var localServer: LocalServer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dinolayout)
 
-        webView = findViewById(R.id.webView)
+        localServer = LocalServer(this)
+        localServer.start()
 
-        // Configurações do WebView
-        val webSettings: WebSettings = webView.settings
-        webSettings.javaScriptEnabled = true
-        webSettings.allowFileAccessFromFileURLs = true
-        webSettings.allowUniversalAccessFromFileURLs = true
+        val webView: WebView = findViewById(R.id.webView)
+        webView.settings.javaScriptEnabled = true
         webView.settings.allowFileAccess = true
+        webView.loadUrl("http://localhost:8080")
+    }
 
-        // Carregar o arquivo HTML local
-        webView.loadUrl("file:///android_asset/index.html")
+    override fun onDestroy() {
+        super.onDestroy()
+        localServer.stop()
     }
 }

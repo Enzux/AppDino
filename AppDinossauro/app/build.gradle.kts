@@ -54,7 +54,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("com.google.android.gms:play-services-vision:20.1.3")
     implementation("androidx.appcompat:appcompat:1.4.2")
-    implementation ("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.cardview:cardview:1.0.0")
     implementation("com.google.android.filament:filament-android:1.54.5")
     implementation("com.google.android.filament:gltfio-android:1.54.5")
+    implementation("org.nanohttpd:nanohttpd:2.3.1")
 }
