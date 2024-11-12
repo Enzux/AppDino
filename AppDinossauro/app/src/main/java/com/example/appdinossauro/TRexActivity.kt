@@ -2,11 +2,10 @@ package com.example.appdinossauro
 
 
 import android.os.Bundle
-import android.webkit.WebSettings
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
 
-class DinoActivity : AppCompatActivity() {
+class TRexActivity : AppCompatActivity() {
 
     private lateinit var localServer: LocalServer
 

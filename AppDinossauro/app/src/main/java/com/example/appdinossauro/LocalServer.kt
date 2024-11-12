@@ -9,8 +9,8 @@ class LocalServer(context: Context) : NanoHTTPD(8080) {
 
     override fun serve(session: IHTTPSession): Response {
         val uri = session.uri
-        val fileName = if (uri == "/") "fbx.html" else uri.substring(1)
-        val assetStream: InputStream? = appContext.assets.open(fileName)
+        val filePath = if (uri == "/") "PgnDino/" else uri.substring(1)
+        val assetStream: InputStream? = appContext.assets.open(filePath)
 
         return if (assetStream != null) {
             newChunkedResponse(Response.Status.OK, "text/html", assetStream)
