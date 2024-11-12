@@ -9,7 +9,7 @@ class LocalServer(context: Context) : NanoHTTPD(8080) {
 
     override fun serve(session: IHTTPSession): Response {
         val uri = session.uri
-        val filePath = if (uri == "/") "TRex.html" else uri.substring(1)
+        val filePath = if (uri == "/") "PgnDino/TRex.html" else uri.substring(1)
         val assetStream: InputStream? = appContext.assets.open(filePath)
 
         return if (assetStream != null) {
