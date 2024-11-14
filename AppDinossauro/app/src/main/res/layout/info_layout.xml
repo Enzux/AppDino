@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wallpaper_dino"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="2"
+        android:fontFamily="@font/julius_sans_one"
+        android:gravity="center"
+        android:text="PROJETO\nREX"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.136" />
+
+    <ImageButton
+        android:id="@+id/btn_interroga"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/circulo_black"
+        android:contentDescription="@string/question"
+        android:scaleType="centerInside"
+        android:src="@drawable/black_interoga_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.947" />
+
+    <ImageButton
+        android:id="@+id/btn_camera"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/circulo"
+        android:contentDescription="@string/camera"
+        android:scaleType="centerInside"
+        android:src="@drawable/camera_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.947" />
+
+    <ImageButton
+        android:id="@+id/btn_dino"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/circulo"
+        android:contentDescription="@string/dinosaur"
+        android:scaleType="centerInside"
+        android:src="@drawable/dino_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backgroundImage"
+        app:layout_constraintVertical_bias="0.947" />
+
+    <TextView
+        android:id="@+id/rectangle"
+        android:layout_width="346dp"
+        android:layout_height="325dp"
+        android:layout_margin="16dp"
+        android:background="#7D6E47"
+        android:text=""
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="210dp" />
+
+    <TextView
+        android:id="@+id/corpoTexto"
+        android:layout_width="332dp"
+        android:layout_height="270dp"
+        android:justificationMode="inter_word"
+        android:text="O Projeto ReX tem como objetivo proporcionar ao usuário a experiência de conhecer e aprender sobre répteis que viveram em nosso planeta durante a Era Mesozoica. Este projeto foi desenvolvido utilizando o Android Studio, em colaboração com as disciplinas de Biologia e História, para criar um aplicativo educativo e interativo sobre dinossauros. Através deste aplicativo, esperamos despertar o interesse e a curiosidade dos usuários sobre esses fascinantes seres que dominaram a Terra antes da era dos mamíferos."
+        android:textAlignment="viewStart"
+        android:textColor="#FFFFFF"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="249dp" />
+
+    <TextView
+        android:id="@+id/tituloTexto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sobre o que se trata o projeto:"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="227dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
