@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
@@ -13,9 +15,9 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_layout);
 
-        Button btnCamera = findViewById(R.id.btn_camera);
-        Button btnDinossauro = findViewById(R.id.btn_dino);
-        Button btnInterrogacao = findViewById(R.id.btn_interroga);
+        ImageButton btnCamera = findViewById(R.id.btn_camera);
+        ImageButton btnDinossauro = findViewById(R.id.btn_dino);
+        ImageButton btnInterrogacao = findViewById(R.id.btn_interroga);
 
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override

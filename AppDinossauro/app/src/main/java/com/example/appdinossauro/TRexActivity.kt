@@ -19,7 +19,7 @@ class TRexActivity : AppCompatActivity() {
         val webView: WebView = findViewById(R.id.webView)
         webView.settings.javaScriptEnabled = true
         webView.settings.allowFileAccess = true
-        webView.loadUrl("http://localhost:8080")
+        webView.loadUrl("http://localhost:8080/PgnDino/Triseratops.html")
     }
 
     override fun onDestroy() {

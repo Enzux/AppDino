@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>FBX File Loader</title>
-    OIII
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <style>
@@ -18,7 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/libs/fflate.min.js"></script></head>
 
 <body>
-<!--<script>
+    <script>
         let scene, camera, renderer;
 
         function init() {
@@ -49,8 +48,9 @@
 
             const fbxLoader = new THREE.FBXLoader();
 
-            fbxLoader.load('fbx1/dn.fbx', (object) => {
-              scene.add(object);
+            fbxLoader.load('fbx1/trike.fbx', (object) => {
+                object.scale.set(0.5, 0.5, 0.5); 
+                scene.add(object);
               animate();
             });
         }
@@ -59,6 +59,6 @@
             requestAnimationFrame(animate);
         }
         init();
-    </script> -->
+    </script>
 </body>
 </html>
