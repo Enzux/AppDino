@@ -49,7 +49,6 @@
             const fbxLoader = new THREE.FBXLoader();
 
             fbxLoader.load('fbx1/trike.fbx', (object) => {
-                object.scale.set(0.5, 0.5, 0.5); 
                 scene.add(object);
               animate();
             });
