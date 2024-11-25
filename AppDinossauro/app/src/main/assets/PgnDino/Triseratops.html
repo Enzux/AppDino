@@ -25,11 +25,12 @@
             scene.background = new THREE.Color(0xdddddd);
 
             camera = new THREE.PerspectiveCamera(5, window.innerWidth/window.innerHeight, 1, 5000);
-            camera.position.z = 10;
+            camera.position.z = 300;
+            camera.position.x = -500;
             const texture = new THREE.TextureLoader().load( "fundo.png" );
 
             light = new THREE.HemisphereLight(0xffffff, 0x444444, 1.0);
-            light.position.set(0, 1, 0);
+            light.position.set(0, 100, 0);
             scene.add(light);
 
             light = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -43,13 +44,14 @@
 
             controls = new THREE.OrbitControls(camera,  renderer.domElement);
             controls.enablePan = false;
-            controls.target.set(0, 0, 0.5);
+            controls.target.set(0, 10, 0.5);
             controls.addEventListener('change', renderer);
 
             const fbxLoader = new THREE.FBXLoader();
 
             fbxLoader.load('fbx1/trike.fbx', (object) => {
                 scene.add(object);
+                object.scale.set(0.07, 0.07, 0.07); 
               animate();
             });
         }
