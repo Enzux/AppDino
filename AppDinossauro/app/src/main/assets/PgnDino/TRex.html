@@ -22,11 +22,10 @@
 
         function init() {
             scene = new THREE.Scene();
-            scene.background = new THREE.Color(0xdddddd);
+            scene.background = new THREE.Color(0x83723F);
 
             camera = new THREE.PerspectiveCamera(5, window.innerWidth/window.innerHeight, 1, 5000);
             camera.position.z = 10;
-            const texture = new THREE.TextureLoader().load( "fundo.png" );
 
             light = new THREE.HemisphereLight(0xffffff, 0x444444, 1.0);
             light.position.set(0, 1, 0);
@@ -35,7 +34,6 @@
             light = new THREE.DirectionalLight(0xffffff, 1.0);
             light.position.set(0, 1, 0);
             scene.add(light);
-            scene.background = texture;
 
             renderer = new THREE.WebGLRenderer({antialias:true});
             renderer.setSize(window.innerWidth, window.innerHeight);
