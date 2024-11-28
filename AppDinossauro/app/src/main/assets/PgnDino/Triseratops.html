@@ -22,24 +22,26 @@
 
         function init() {
             scene = new THREE.Scene();
-            scene.background = new THREE.Color(0xdddddd);
+            scene.background = new THREE.Color(0x83723F);
 
             camera = new THREE.PerspectiveCamera(5, window.innerWidth/window.innerHeight, 1, 5000);
             camera.position.z = 300;
             camera.position.x = -500;
-            const texture = new THREE.TextureLoader().load( "fundo.png" );
 
-            light = new THREE.HemisphereLight(0xffffff, 0x444444, 1.0);
+            light = new THREE.HemisphereLight(0xffffff, 0x444444, 10.0);
             light.position.set(0, 100, 0);
             scene.add(light);
 
-            light = new THREE.DirectionalLight(0xffffff, 1.0);
-            light.position.set(0, 1, 0);
-            scene.add(light);
-            scene.background = texture;
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 2.0); // Aumente a intensidade
+            directionalLight.position.set(50, 200, 100); // Ajuste a posição para iluminar o modelo
+            scene.add(directionalLight);
+
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Luz suave para iluminar o modelo
+            scene.add(ambientLight);
 
             renderer = new THREE.WebGLRenderer({antialias:true});
             renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.shadowMap.enabled = false;
             document.body.appendChild(renderer.domElement);
 
             controls = new THREE.OrbitControls(camera,  renderer.domElement);
@@ -50,6 +52,12 @@
             const fbxLoader = new THREE.FBXLoader();
 
             fbxLoader.load('fbx1/trike.fbx', (object) => {
+                object.traverse((child) => {
+                if (child.isMesh) {
+                    child.material.transparent = false;  // Desativa a transparência
+                    child.material.opacity = 1;          // Define opacidade total
+                    }
+                });
                 scene.add(object);
                 object.scale.set(0.07, 0.07, 0.07); 
               animate();
