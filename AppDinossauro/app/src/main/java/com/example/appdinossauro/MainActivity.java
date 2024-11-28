@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView barcodeText;
     private String barcodeData;
     CardView cardView;
-    public ToneGenerator toneGen1;  // Declarar ToneGenerator aqui
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         barcodeText = findViewById(R.id.barcode_text);
 
         // Inicializar ToneGenerator
-        toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
+
 
         detectBarcode();
     }
@@ -98,11 +97,9 @@ public class MainActivity extends AppCompatActivity {
                             if (barcodes.valueAt(0).email != null) {
                                 barcodeText.removeCallbacks(null);
                                 barcodeData = barcodes.valueAt(0).email.address;
-                                barcodeText.setText(barcodeData);
                                 intentToBrowser(barcodeData);
                             } else {
                                 barcodeData = barcodes.valueAt(0).displayValue;
-                                barcodeText.setText(barcodeData);
                                 intentToBrowser(barcodeData);
                             }
                         }

@@ -40,4 +40,17 @@ public class SelectDinoActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void go_TRex(View v){
+        Intent intent = new Intent(SelectDinoActivity.this, TRexActivity.class);
+        startActivity(intent);
+    }
+    public void go_Bronq(View v){
+        Intent intent = new Intent(SelectDinoActivity.this, BronquioActivity.class);
+        startActivity(intent);
+    }
+    public void go_Trise(View v){
+        Intent intent = new Intent(SelectDinoActivity.this, TriseratosActivity.class);
+        startActivity(intent);
+    }
 }

@@ -12,7 +12,7 @@ class TRexActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.trex_layout)
+        setContentView(R.layout.dinolayout)
 
         localServer = LocalServer(this)
         localServer.start()
