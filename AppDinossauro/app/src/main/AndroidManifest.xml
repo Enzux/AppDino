@@ -45,6 +45,11 @@
         </activity>
 
         <activity
+            android:name=".SelectDinoActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
             android:name=".TriseratosActivity"
             android:exported="true">
             <intent-filter>
