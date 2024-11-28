@@ -38,18 +38,18 @@
         app:layout_constraintVertical_bias="0.136" />
 
     <ImageButton
-        android:id="@+id/btn_interroga"
+        android:id="@+id/btn_dino"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:background="@drawable/circulo_black"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/circulo"
         android:scaleType="centerInside"
-        android:src="@drawable/black_interoga_icon"
+        android:src="@drawable/dino_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.947" />
+        app:layout_constraintVertical_bias="0.747" />
 
     <ImageButton
         android:id="@+id/btn_camera"
@@ -60,55 +60,58 @@
         android:src="@drawable/camera_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.947" />
 
     <ImageButton
-        android:id="@+id/btn_dino"
+        android:id="@+id/btn_interroga"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:background="@drawable/circulo"
+        android:background="@drawable/circulo_black"
         android:scaleType="centerInside"
-        android:src="@drawable/dino_icon"
+        android:src="@drawable/black_interoga_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.877"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backgroundImage"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.947" />
 
-    <TextView
+    <View
         android:id="@+id/rectangle"
         android:layout_width="346dp"
         android:layout_height="325dp"
-        android:layout_margin="16dp"
+        android:layout_marginBottom="176dp"
         android:background="#7D6E47"
-        android:text=""
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="210dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundImage"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundImage"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/corpoTexto"
         android:layout_width="332dp"
         android:layout_height="270dp"
+        android:layout_marginStart="8dp"
         android:justificationMode="inter_word"
         android:text="O Projeto ReX tem como objetivo proporcionar ao usuário a experiência de conhecer e aprender sobre répteis que viveram em nosso planeta durante a Era Mesozoica. Este projeto foi desenvolvido utilizando o Android Studio, em colaboração com as disciplinas de Biologia e História, para criar um aplicativo educativo e interativo sobre dinossauros. Através deste aplicativo, esperamos despertar o interesse e a curiosidade dos usuários sobre esses fascinantes seres que dominaram a Terra antes da era dos mamíferos."
         android:textAlignment="viewStart"
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="249dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle"
+        app:layout_constraintStart_toStartOf="@+id/rectangle" />
 
     <TextView
         android:id="@+id/tituloTexto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"
         android:text="Sobre o que se trata o projeto:"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="227dp" />
+        app:layout_constraintBottom_toTopOf="@+id/corpoTexto"
+        app:layout_constraintStart_toStartOf="@+id/rectangle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

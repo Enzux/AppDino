@@ -54,7 +54,7 @@
         android:id="@+id/textView"
         android:layout_width="166dp"
         android:layout_height="81dp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="sans-serif-condensed-light"
         android:text="Escolha o Dinossauro"
         android:textAlignment="center"
         android:textColor="@color/white"
