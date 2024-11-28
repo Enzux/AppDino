@@ -25,7 +25,6 @@
         android:theme="@style/Theme.AppDinossauro"
         tools:targetApi="31">
 
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -50,10 +49,14 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="appdinossauro" android:host="telatrise" />
-                <!--appdinossauro://telatrise-->
+
+                <data
+                    android:host="telatrise"
+                    android:scheme="appdinossauro" />
+                <!-- appdinossauro://telatrise -->
             </intent-filter>
         </activity>
 
@@ -68,16 +71,19 @@
                 <!-- appdinossauro://telatrex -->
             </intent-filter>
         </activity>
-        
-        
-        <activity android:name=".BronquioActivity"
+        <activity
+            android:name=".BronquioActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="appdinossauro" android:host="telabronq" />
-                <!--appdinossauro://telabronq-->
+
+                <data
+                    android:host="telabronq"
+                    android:scheme="appdinossauro" />
+                <!-- appdinossauro://telabronq -->
             </intent-filter>
         </activity>
 
