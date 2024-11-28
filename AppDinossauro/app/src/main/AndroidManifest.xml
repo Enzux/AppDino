@@ -24,25 +24,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDinossauro"
         tools:targetApi="31">
-        <activity
-            android:name=".Escolhadino"
-            android:exported="false" />
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".HomeActivity"
-            android:exported="true"></activity>
+            android:exported="false">
+        </activity>
+
         <activity
             android:name=".InfoActivity"
-            android:exported="true">
+            android:exported="false">
         </activity>
+
         <activity
             android:name=".TriseratosActivity"
             android:exported="true">
@@ -54,18 +56,15 @@
                 <!--appdinossauro://telatrise-->
             </intent-filter>
         </activity>
+
         <activity
             android:name=".TRexActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="telatrex"
-                    android:scheme="appdinossauro" />
+                <data android:host="telatrex" android:scheme="appdinossauro" />
                 <!-- appdinossauro://telatrex -->
             </intent-filter>
         </activity>

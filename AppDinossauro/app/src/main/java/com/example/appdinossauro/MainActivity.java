@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView barcodeText;
     private String barcodeData;
     CardView cardView;
-    private ToneGenerator toneGen1;  // Declarar ToneGenerator aqui
+    public ToneGenerator toneGen1;  // Declarar ToneGenerator aqui
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,10 +116,6 @@ public class MainActivity extends AppCompatActivity {
     private void intentToBrowser(String url) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(browserIntent);
-    }
-
-    public void go_dino(View view){
-        setContentView(R.layout.dinolayout);
     }
 
 }

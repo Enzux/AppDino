@@ -13,33 +13,6 @@ public class InfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_layout);
-
-        Button btnCamera = findViewById(R.id.btn_camera);
-        Button btnDinossauro = findViewById(R.id.btn_dino);
-        Button btnInterrogacao = findViewById(R.id.btn_interroga);
-
-        btnCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(InfoActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        btnDinossauro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(InfoActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        btnInterrogacao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(InfoActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
-        });
+        
     }
 }
